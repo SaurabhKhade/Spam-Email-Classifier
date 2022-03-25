@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  /* border: 2px solid yellow; */
+  /* display: table; */
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(161, 14, 137);
+  gap: 20px;
+  padding: 30px 0;
+  background: radial-gradient(at top left, rgb(58, 1, 58), rgb(161, 14, 137));
+  color: white;
+  height: 150px;
+}
+
+.title h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.title p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.form {
+  /* border: 1px solid red; */
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 500px;
+}
+
+.form textarea {
+  height: 300px;
+  width: 900px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.form button {
+  width: 910px;
+  padding: 15px;
+  background: radial-gradient(at top left, rgb(58, 1, 58), rgb(161, 14, 137));
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgb(161, 14, 137);
+}
+
+.result {
+  /* border: 1px solid blue; */
+  height: calc(100% - 650px);
+  background: radial-gradient(
+    at bottom right,
+    rgb(58, 1, 58),
+    rgb(161, 14, 137)
+  );
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  color: white;
+  overflow: hidden;
+}
+
+#result {
+  transform: translateY(200px);
+  animation: bounce-up 200ms ease-in-out 20ms 1 forwards;
+}
+
+@keyframes bounce-up {
+  100% {
+    transform: translateY(0);
+  }
+}
