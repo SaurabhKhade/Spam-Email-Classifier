@@ -38,8 +38,10 @@ def home():
 def check():
     email = request.get_json()['email']
     vectors = vectorizer.transform([process_email(email)])
-    is_spam = classifier.predict(vectors)
-    return {"is_spam": int(is_spam[0])}
+    is_spam = classifier.predict_proba(vectors)[:,1]
+    preds = is_spam.apply(lambda el: 1 if el >= 0.65 else 0)
+
+    return {"is_spam": int(preds[0])}
     
 if __name__ == "__main__":
     app.run(debug=True)
